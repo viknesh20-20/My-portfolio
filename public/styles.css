@@ -31,13 +31,13 @@ header {
 header .logo {
     font-size: 2rem;
     font-weight: bold;
-    animation: fadeIn 1s ease-out;
 }
 
 header nav ul {
     display: flex;
     list-style: none;
     gap: 20px;
+    padding: 0;
 }
 
 header nav ul li a {
@@ -49,6 +49,21 @@ header nav ul li a {
 }
 
 header nav ul li a:hover {
+    color: #FFB645;
+}
+
+header .social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+header .social-icons a {
+    color: white;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+header .social-icons a:hover {
     color: #FFB645;
 }
 
@@ -72,18 +87,15 @@ header button:hover {
     color: white;
     padding: 100px 20px;
     text-align: center;
-    animation: fadeIn 1s ease-out;
 }
 
 #hero h1 {
     font-size: 3rem;
     margin-bottom: 10px;
-    animation: slideIn 1s ease-out;
 }
 
 #hero p {
     font-size: 1.2rem;
-    animation: fadeIn 1.5s ease-out;
 }
 
 /* Section Styles */
@@ -115,14 +127,46 @@ section h2::after {
 #about {
     display: flex;
     align-items: center;
-    gap: 20px;
+    justify-content: center;
+    flex-direction: column;
+    padding: 50px 20px;
+    background-color: #F7F7F7;
+    text-align: center;
     animation: fadeIn 2s ease-out;
+}
+
+#about .container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+#about h2 {
+    font-size: 2.5rem;
+    color: #1a3c5b;
+    margin-bottom: 20px;
+    font-weight: bold;
+    position: relative;
+}
+
+#about h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #FFB645;
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+}
+
+.profile-container {
+    margin-bottom: 20px;
 }
 
 .profile-photo {
     border-radius: 50%;
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     object-fit: cover;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out;
@@ -132,14 +176,19 @@ section h2::after {
     transform: scale(1.05);
 }
 
-/* Education Section */
-#education {
-    background-color: #F0F0F0;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+#about p {
+    font-size: 1.1rem;
+    color: #333;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
+#about span {
+    font-weight: bold;
+}
+
+/* Education Section */
 #education p {
     font-size: 1.1rem;
     margin: 5px 0;
@@ -153,9 +202,29 @@ section h2::after {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-#projects p {
+#projects .project-item {
+    margin-bottom: 20px;
+}
+
+#projects .project-item h3 {
+    font-size: 1.5rem;
+    color: #1a3c5b;
+}
+
+#projects .project-item p {
     font-size: 1.1rem;
     margin-bottom: 10px;
+}
+
+#projects .project-item a {
+    color: #FFB645;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+#projects .project-item a:hover {
+    color: #FF8F1F;
 }
 
 /* Contact Section */
@@ -187,18 +256,29 @@ section h2::after {
     outline: none;
 }
 
+#contact button {
+    background-color: #1a3c5b;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#contact button:hover {
+    background-color: #FFB645;
+    color: #333;
+}
+
 /* Footer */
 footer {
     background-color: #1a3c5b;
     color: white;
     text-align: center;
     padding: 20px;
-    font-size: 1rem;
-    margin-top: 50px;
-}
-
-footer p {
-    margin: 0;
 }
 
 /* Scroll to Top Button */
@@ -228,7 +308,6 @@ footer p {
 
     #about {
         flex-direction: column;
-        text-align: center;
     }
 
     .profile-photo {
@@ -238,24 +317,5 @@ footer p {
 
     section h2 {
         font-size: 1.6rem;
-    }
-}
-
-/* Animations */
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-@keyframes slideIn {
-    0% {
-        transform: translateX(-100%);
-    }
-    100% {
-        transform: translateX(0);
     }
 }

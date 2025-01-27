@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>S Muthu Viknesh Portfolio</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-..." crossorigin="anonymous">
 </head>
 <body>
     <!-- Header Section -->
@@ -15,10 +16,19 @@
                 <li><a href="#about">About Me</a></li>
                 <li><a href="#education">Education</a></li>
                 <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="/resume.pdf" download>Download My Resume</a></li>
             </ul>
         </nav>
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/in/muthu-viknesh-80087024b/" target="_blank" title="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/viknesh20-20" target="_blank" title="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+        </div>
         <button id="theme-toggle">Switch to Dark Mode</button>
     </header>
 
@@ -32,76 +42,94 @@
 
         <!-- About Me Section -->
         <section id="about">
-            <h2>About Me</h2>
+            <div class="container">
+                <h2>About Me</h2>
+            <div class="profile-container">
+            <!-- Add Profile Photo -->
             <img src="profile.jpg" alt="Profile Photo" class="profile-photo">
-            <p>Motivated pre final-year Computer Science Engineering student with a strong foundation in Machine Learning, Python, and Data structures.</p>
+            </div>
+            <p>
+                Hi, I’m <span>S Muthu Viknesh</span>, a 3rd-year Computer Science Engineering student passionate about technology, problem-solving, and innovation. With hands-on experience in Python, artificial neural networks, and machine learning, I’m dedicated to building AI-powered solutions that make an impact. I love working on projects like <span>AI-Powered Code Debugging Tool</span> and <span>Emotion Recognition from Text for Sentiment Analysis</span>, which push the boundaries of what’s possible with AI.
+            </p>
+            </div>
         </section>
 
         <!-- Education Section -->
         <section id="education">
-            <h2>Education</h2>
-            <p>B.E. in Computer Science Engineering from University College of Engineering, Kanchipuram.</p>
-            <p>CGPA: 8.3 (as of 3rd year). Expected Graduation Date: June 2026.</p>
+            <div class="container">
+                <h2>Education</h2>
+                <p>B.E. in Computer Science Engineering from University College of Engineering, Kanchipuram.</p>
+                <p>CGPA: 8.3 (as of 3rd year). Expected Graduation Date: June 2026.</p>
+            </div>
         </section>
 
         <!-- Experience Section -->
         <section id="experience">
-            <h2>Experience</h2>
-            <p>Intern at Coding Junior (January 2025 - Present): Working on AI and machine learning projects using Python and TensorFlow.</p>
-        </section>
-
-        <!-- Achievements Section -->
-        <section id="achievements">
-            <h2>Achievements</h2>
-            <ul>
-                <li>Achieved a CGPA of 8.3 in Computer Science and Engineering.</li>
-                <li>Completed a Machine Learning course from IIT Madras and NSDC on Internshala.</li>
-                <li>Leadership role in NSS, organizing social impact activities.</li>
-            </ul>
+            <div class="container">
+                <h2>Work Experience</h2>
+                <div class="experience-item">
+                    <h3>Artificial Neural Networks Intern</h3>
+                    <p><em>Coding Junior (January 2025 – Present)</em></p>
+                    <ul>
+                        <li>Designed and implemented efficient neural network solutions for projects.</li>
+                        <li>Collaborated with a team to enhance machine learning models for better accuracy.</li>
+                        <li>Contributed to AI research for practical problem-solving applications.</li>
+                    </ul>
+                </div>
+            </div>
         </section>
 
         <!-- Projects Section -->
         <section id="projects">
-            <h2>Projects</h2>
-            <p><strong>Emotion Recognition from Text for Sentiment Analysis:</strong> Developed a machine learning model to recognize emotions in text data using TensorFlow and Keras. Optimized for analyzing user feedback and social media interactions.</p>
-        </section>
-
-        <!-- Hobbies Section -->
-        <section id="hobbies">
-            <h2>Hobbies</h2>
-            <ul>
-                <li>Reading books on technology, AI, and self-improvement.</li>
-                <li>Solving coding challenges on LeetCode and HackerRank.</li>
-                <li>Learning new information about AI, ML, and Deep Learning.</li>
-            </ul>
+            <div class="container">
+                <h2>Projects</h2>
+                <div class="project-item">
+                    <h3>AI-Powered Code Debugging Tool</h3>
+                    <p>
+                        An AI-based solution that identifies and fixes coding issues in Python. Utilized machine learning models to analyze and debug code snippets.
+                    </p>
+                    <a href="https://github.com/viknesh20-20">View on GitHub</a>
+                </div>
+                <div class="project-item">
+                    <h3>Emotion Recognition from Text</h3>
+                    <p>
+                        Developed a tool to analyze and determine emotions from text input using NLP techniques and trained machine learning models.
+                    </p>
+                    <a href="https://github.com/viknesh20-20">View on GitHub</a>
+                </div>
+            </div>
         </section>
 
         <!-- Contact Section -->
         <section id="contact">
-            <h2>Contact Me</h2>
-            <form id="contact-form">
-                <label for="name">Your Name</label>
-                <input type="text" id="name" name="name" required>
-                <label for="email">Your Email</label>
-                <input type="email" id="email" name="email" required>
-                <label for="message">Your Message</label>
-                <textarea id="message" name="message" required></textarea>
-                <button type="submit">Send Message</button>
-            </form>
-            <div id="contact-info">
-                <p>Email: smuthuviknesh@gmail.com</p>
-                <p>Phone: 8637428971</p>
+            <div class="container">
+                <h2>Contact Me</h2>
+                <form id="contact-form">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" required>
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" name="email" required>
+                    <label for="message">Your Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+                <div id="contact-info">
+                    <p>Email: smuthuviknesh@gmail.com</p>
+                    <p>Phone: 8637428971</p>
+                </div>
             </div>
         </section>
-
-        <!-- Footer -->
-        <footer>
-            <p>© 2025 S Muthu Viknesh | All Rights Reserved</p>
-        </footer>
     </main>
 
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 S Muthu Viknesh | All Rights Reserved</p>
+    </footer>
+
+    <!-- Scroll to Top Button -->
     <button id="scroll-to-top" onclick="scrollToTop()">Scroll to Top</button>
 
+    <!-- JavaScript -->
     <script src="main.js"></script>
 </body>
 </html>
