@@ -1,0 +1,261 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F5F5F5;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #f1f1f1;
+}
+
+/* Header */
+header {
+    background-color: #1a3c5b;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+header .logo {
+    font-size: 2rem;
+    font-weight: bold;
+    animation: fadeIn 1s ease-out;
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 10px;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #FFB645;
+}
+
+header button {
+    background-color: #FFB645;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+header button:hover {
+    background-color: #FF8F1F;
+}
+
+/* Hero Section */
+#hero {
+    background: linear-gradient(45deg, #1a3c5b, #FFB645);
+    color: white;
+    padding: 100px 20px;
+    text-align: center;
+    animation: fadeIn 1s ease-out;
+}
+
+#hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    animation: slideIn 1s ease-out;
+}
+
+#hero p {
+    font-size: 1.2rem;
+    animation: fadeIn 1.5s ease-out;
+}
+
+/* Section Styles */
+section {
+    margin: 50px auto;
+    max-width: 1100px;
+    padding: 20px;
+}
+
+section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #1a3c5b;
+    position: relative;
+}
+
+section h2::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: #FFB645;
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+}
+
+/* About Me Section */
+#about {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    animation: fadeIn 2s ease-out;
+}
+
+.profile-photo {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.profile-photo:hover {
+    transform: scale(1.05);
+}
+
+/* Education Section */
+#education {
+    background-color: #F0F0F0;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+#education p {
+    font-size: 1.1rem;
+    margin: 5px 0;
+}
+
+/* Projects Section */
+#projects {
+    background-color: #e9f0f7;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+#projects p {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+/* Contact Section */
+#contact {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+#contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#contact input,
+#contact textarea {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+#contact input:focus,
+#contact textarea:focus {
+    border-color: #FFB645;
+    outline: none;
+}
+
+/* Footer */
+footer {
+    background-color: #1a3c5b;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 1rem;
+    margin-top: 50px;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Scroll to Top Button */
+#scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #FFB645;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    display: none;
+    transition: background-color 0.3s ease;
+}
+
+#scroll-to-top:hover {
+    background-color: #FF8F1F;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #about {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-photo {
+        width: 150px;
+        height: 150px;
+    }
+
+    section h2 {
+        font-size: 1.6rem;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
