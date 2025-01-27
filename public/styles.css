@@ -301,21 +301,72 @@ footer {
 
 /* Responsive Styles */
 @media (max-width: 768px) {
+    /* Header */
     header {
         flex-direction: column;
         text-align: center;
     }
 
-    #about {
+    header .social-icons {
+        justify-content: center;
+        gap: 10px;
+    }
+
+    header nav ul {
         flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    /* Hero Section */
+    #hero h1 {
+        font-size: 2.5rem;
+    }
+
+    #hero p {
+        font-size: 1rem;
+    }
+
+    /* About Section */
+    #about {
+        padding: 40px 20px;
     }
 
     .profile-photo {
-        width: 150px;
-        height: 150px;
+        width: 120px;
+        height: 120px;
     }
 
+    /* Section Headings */
     section h2 {
         font-size: 1.6rem;
+    }
+
+    /* About Text */
+    #about p {
+        font-size: 1rem;
+        max-width: 100%;
+    }
+
+    /* Projects Section */
+    #projects .project-item h3 {
+        font-size: 1.3rem;
+    }
+
+    /* Contact Section */
+    #contact form {
+        gap: 15px;
+    }
+
+    /* Footer */
+    footer p {
+        font-size: 0.9rem;
+    }
+
+    /* Scroll to Top Button */
+    #scroll-to-top {
+        bottom: 10px;
+        right: 10px;
+        padding: 8px 15px;
     }
 }
