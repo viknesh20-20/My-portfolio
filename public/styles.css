@@ -9,15 +9,15 @@ body {
 }
 
 body.dark-mode {
-    background-color: #1a1a1a;
-    color: #f1f1f1;
+    background-color: #121212;
+    color: #e5e5e5;
 }
 
 /* Header */
 header {
-    background-color: #1a3c5b;
-    color: #fff;
-    padding: 15px 20px;
+    background-color: #4A90E2;  /* Changed blue color */
+    color: white;
+    padding: 15px 20px;  /* Increased padding */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -25,27 +25,36 @@ header {
     top: 0;
     z-index: 10;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease;
+    flex-wrap: wrap;
 }
 
 header .logo {
-    font-size: 2rem;
+    font-size: 1.8rem;  /* Adjusted logo size */
     font-weight: bold;
     white-space: nowrap;
+    flex: 1;
+}
+
+header nav {
+    flex: 2;
+    display: flex;
+    justify-content: flex-end;
 }
 
 header nav ul {
     display: flex;
     list-style: none;
-    gap: 20px;
+    gap: 20px;  /* Reduced gap between links */
     padding: 0;
+    margin: 0;
+    flex-wrap: wrap;
 }
 
 header nav ul li a {
     color: white;
     text-decoration: none;
-    font-size: 1rem;
-    padding: 10px;
+    font-size: 1.1rem;  /* Slightly adjusted font size */
+    padding: 8px;
     transition: color 0.3s ease;
 }
 
@@ -60,25 +69,10 @@ header .menu-toggle {
     color: white;
 }
 
-header .social-icons {
-    display: flex;
-    gap: 15px;
-}
-
-header .social-icons a {
-    color: white;
-    font-size: 1.5rem;
-    transition: color 0.3s ease;
-}
-
-header .social-icons a:hover {
-    color: #FFB645;
-}
-
 header button {
     background-color: #FFB645;
     border: none;
-    padding: 10px 20px;
+    padding: 8px 16px;
     cursor: pointer;
     border-radius: 5px;
     font-size: 1rem;
@@ -89,9 +83,63 @@ header button:hover {
     background-color: #FF8F1F;
 }
 
+/* Responsive Styles for Header */
+@media (max-width: 1024px) {
+    header .logo {
+        font-size: 1.6rem;  /* Adjusted logo size for tablet */
+    }
+
+    header nav ul {
+        flex-direction: column;
+        display: none;
+        background-color: #4A90E2;  /* Changed to match header */
+        padding: 10px;
+        border-radius: 8px;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        width: 80%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    header.nav-open ul {
+        display: flex;
+    }
+
+    header .menu-toggle {
+        display: block;
+    }
+
+    header nav ul li a {
+        font-size: 1rem;  /* Slightly reduced font size for mobile */
+        padding: 10px;
+        text-align: center;
+        display: block;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-wrap: wrap;
+    }
+
+    header .logo {
+        font-size: 1.5rem;  /* Adjusted logo size for mobile */
+    }
+
+    header nav ul {
+        width: 100%;
+    }
+
+    header button {
+        font-size: 1rem;
+        padding: 8px 15px;
+    }
+}
+
 /* Hero Section */
 #hero {
-    background: linear-gradient(45deg, #1a3c5b, #FFB645);
+    background: linear-gradient(45deg, #4A90E2, #FFB645);  /* Changed blue */
     color: white;
     padding: 80px 20px;
     text-align: center;
@@ -111,13 +159,17 @@ section {
     margin: 50px auto;
     max-width: 1100px;
     padding: 20px;
+    background-color: #F7F7F7;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 section h2 {
     font-size: 2rem;
     margin-bottom: 20px;
-    color: #1a3c5b;
+    color: #4A90E2;  /* Changed to match header */
     position: relative;
+    display: inline-block;
 }
 
 section h2::after {
@@ -129,6 +181,7 @@ section h2::after {
     position: absolute;
     bottom: -10px;
     left: 0;
+    transition: width 0.3s ease-in-out;
 }
 
 /* About Section */
@@ -137,7 +190,7 @@ section h2::after {
     flex-direction: column;
     align-items: center;
     padding: 40px 20px;
-    background-color: #F7F7F7;
+    background-color: #FAFAFA;
     animation: fadeIn 2s ease-out;
 }
 
@@ -165,6 +218,7 @@ section h2::after {
     line-height: 1.6;
     text-align: justify;
     margin-top: 20px;
+    color: #555;
 }
 
 /* Projects Section */
@@ -177,95 +231,149 @@ section h2::after {
 
 #projects h3 {
     font-size: 1.5rem;
-    color: #1a3c5b;
+    color: #4A90E2;  /* Changed blue */
 }
 
 /* Contact Section */
+#contact {
+    background-color: #F7F7F7;
+    padding: 40px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+#contact h2 {
+    color: #4A90E2;  /* Changed blue */
+    margin-bottom: 20px;
+}
+
 #contact form {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 15px;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 #contact input,
 #contact textarea {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 8px;
     font-size: 1rem;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+#contact input:focus,
+#contact textarea:focus {
+    border-color: #FFB645;
+    box-shadow: 0 0 6px rgba(255, 179, 69, 0.5);
+}
+
+#contact form button {
+    background: linear-gradient(45deg, #FFB645, #FF8F1F);
+    color: white;
+    font-size: 1rem;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#contact form button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(255, 179, 69, 0.5);
 }
 
 /* Footer */
 footer {
-    background-color: #1a3c5b;
+    background-color: #4A90E2;  /* Changed blue */
     color: white;
     text-align: center;
-    padding: 15px 20px;
+    padding: 20px 10px;
+    font-size: 0.9rem;
+    position: relative;
 }
 
-/* Scroll to Top Button */
+footer p {
+    margin: 5px 0;
+}
+
+footer .social-icons {
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;  /* Reduced gap */
+}
+
+footer .social-icons a {
+    color: white;
+    font-size: 1.8rem;  /* Adjusted icon size */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+footer .social-icons a:hover {
+    color: #FFB645;
+    transform: scale(1.1);  /* Reduced hover effect size */
+}
+
+/* Dark Theme Colors */
+body.dark-mode {
+    background-color: #121212;
+    color: #e5e5e5;
+}
+
+body.dark-mode h2 {
+    color: #FFB645;
+}
+
+body.dark-mode section,
+body.dark-mode #projects {
+    background-color: #1e1e1e;
+    color: #e5e5e5;
+}
+
+body.dark-mode #contact {
+    background-color: #2c2c2c; /* Darker contact background */
+    box-shadow: 0 4px 12px rgba(255, 179, 69, 0.2);
+}
+
+body.dark-mode footer {
+    background-color: #121212;
+    color: #cccccc;
+}
+
+body.dark-mode footer .social-icons a {
+    color: #cccccc;
+}
+
+body.dark-mode footer .social-icons a:hover {
+    color: #FFB645;
+}
+
+/* Scroll-to-Top Button */
 #scroll-to-top {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
-    padding: 10px 15px;
+    bottom: 30px;
+    right: 30px;
     background-color: #FFB645;
     color: white;
+    font-size: 1.5rem;
+    padding: 10px 20px;
+    border-radius: 50%;
     border: none;
-    border-radius: 5px;
-    display: none;
-    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    display: none; /* Initially hidden */
 }
 
 #scroll-to-top:hover {
     background-color: #FF8F1F;
-}
-
-/* Responsive Styles for Mobile */
-@media (max-width: 768px) {
-    header {
-        flex-wrap: wrap;
-    }
-
-    header .menu-toggle {
-        display: block;
-    }
-
-    header nav ul {
-        display: none;
-        flex-direction: column;
-        gap: 10px;
-        background-color: #1a3c5b;
-        padding: 15px;
-        border-radius: 5px;
-        position: absolute;
-        top: 60px;
-        right: 20px;
-    }
-
-    header.nav-open ul {
-        display: flex;
-    }
-
-    #hero h1 {
-        font-size: 2rem;
-    }
-
-    #about .profile-photo {
-        width: 180px;
-        height: 180px;
-    }
-
-    section h2 {
-        font-size: 1.5rem;
-    }
-
-    #projects h3 {
-        font-size: 1.2rem;
-    }
-
-    footer {
-        font-size: 0.9rem;
-    }
+    transform: scale(1.1);
 }

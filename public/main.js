@@ -17,6 +17,13 @@ window.addEventListener('scroll', () => {
         scrollToTopButton.style.display = 'none';
     }
 });
+// Mobile Menu Toggle
+const menuToggle = document.querySelector('.menu-toggle');
+const header = document.querySelector('header');
+
+menuToggle.addEventListener('click', () => {
+    header.classList.toggle('nav-open');
+});
 
 function scrollToTop() {
     window.scrollTo({
