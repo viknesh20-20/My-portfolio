@@ -17,7 +17,7 @@ body.dark-mode {
 header {
     background-color: #1a3c5b;
     color: #fff;
-    padding: 20px;
+    padding: 15px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -31,6 +31,7 @@ header {
 header .logo {
     font-size: 2rem;
     font-weight: bold;
+    white-space: nowrap;
 }
 
 header nav ul {
@@ -43,13 +44,20 @@ header nav ul {
 header nav ul li a {
     color: white;
     text-decoration: none;
-    font-size: 1.1rem;
+    font-size: 1rem;
     padding: 10px;
     transition: color 0.3s ease;
 }
 
 header nav ul li a:hover {
     color: #FFB645;
+}
+
+header .menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: white;
 }
 
 header .social-icons {
@@ -85,7 +93,7 @@ header button:hover {
 #hero {
     background: linear-gradient(45deg, #1a3c5b, #FFB645);
     color: white;
-    padding: 100px 20px;
+    padding: 80px 20px;
     text-align: center;
 }
 
@@ -115,42 +123,6 @@ section h2 {
 section h2::after {
     content: '';
     display: block;
-    width: 50px;
-    height: 3px;
-    background-color: #FFB645;
-    position: absolute;
-    bottom: -10px;
-    left: 0;
-}
-
-/* About Me Section */
-#about {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 50px 20px;
-    background-color: #F7F7F7;
-    text-align: center;
-    animation: fadeIn 2s ease-out;
-}
-
-#about .container {
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-#about h2 {
-    font-size: 2.5rem;
-    color: #1a3c5b;
-    margin-bottom: 20px;
-    font-weight: bold;
-    position: relative;
-}
-
-#about h2::after {
-    content: '';
-    display: block;
     width: 60px;
     height: 3px;
     background-color: #FFB645;
@@ -159,39 +131,40 @@ section h2::after {
     left: 0;
 }
 
-.profile-container {
-    margin-bottom: 20px;
+/* About Section */
+#about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    background-color: #F7F7F7;
+    animation: fadeIn 2s ease-out;
+}
+
+#about .container {
+    max-width: 1000px;
+    text-align: center;
 }
 
 .profile-photo {
     border-radius: 50%;
-    width: 150px;
-    height: 150px;
+    width: 220px;
+    height: 220px;
     object-fit: cover;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
     transition: transform 0.3s ease-in-out;
 }
 
 .profile-photo:hover {
-    transform: scale(1.05);
+    transform: scale(1.1);
 }
 
 #about p {
     font-size: 1.1rem;
-    color: #333;
     line-height: 1.6;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-#about span {
-    font-weight: bold;
-}
-
-/* Education Section */
-#education p {
-    font-size: 1.1rem;
-    margin: 5px 0;
+    text-align: justify;
+    margin-top: 20px;
 }
 
 /* Projects Section */
@@ -202,75 +175,25 @@ section h2::after {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-#projects .project-item {
-    margin-bottom: 20px;
-}
-
-#projects .project-item h3 {
+#projects h3 {
     font-size: 1.5rem;
     color: #1a3c5b;
 }
 
-#projects .project-item p {
-    font-size: 1.1rem;
-    margin-bottom: 10px;
-}
-
-#projects .project-item a {
-    color: #FFB645;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-#projects .project-item a:hover {
-    color: #FF8F1F;
-}
-
 /* Contact Section */
-#contact {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
 #contact form {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 15px;
 }
 
 #contact input,
 #contact textarea {
+    width: 100%;
     padding: 10px;
-    border-radius: 5px;
     border: 1px solid #ccc;
+    border-radius: 5px;
     font-size: 1rem;
-    transition: border-color 0.3s ease;
-}
-
-#contact input:focus,
-#contact textarea:focus {
-    border-color: #FFB645;
-    outline: none;
-}
-
-#contact button {
-    background-color: #1a3c5b;
-    color: white;
-    border: none;
-    padding: 12px 20px;
-    font-size: 1rem;
-    font-weight: bold;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-#contact button:hover {
-    background-color: #FFB645;
-    color: #333;
 }
 
 /* Footer */
@@ -278,7 +201,7 @@ footer {
     background-color: #1a3c5b;
     color: white;
     text-align: center;
-    padding: 20px;
+    padding: 15px 20px;
 }
 
 /* Scroll to Top Button */
@@ -286,7 +209,7 @@ footer {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    padding: 10px 20px;
+    padding: 10px 15px;
     background-color: #FFB645;
     color: white;
     border: none;
@@ -299,74 +222,50 @@ footer {
     background-color: #FF8F1F;
 }
 
-/* Responsive Styles */
+/* Responsive Styles for Mobile */
 @media (max-width: 768px) {
-    /* Header */
     header {
-        flex-direction: column;
-        text-align: center;
+        flex-wrap: wrap;
     }
 
-    header .social-icons {
-        justify-content: center;
-        gap: 10px;
+    header .menu-toggle {
+        display: block;
     }
 
     header nav ul {
+        display: none;
         flex-direction: column;
-        align-items: center;
-        gap: 15px;
+        gap: 10px;
+        background-color: #1a3c5b;
+        padding: 15px;
+        border-radius: 5px;
+        position: absolute;
+        top: 60px;
+        right: 20px;
     }
 
-    /* Hero Section */
+    header.nav-open ul {
+        display: flex;
+    }
+
     #hero h1 {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
 
-    #hero p {
-        font-size: 1rem;
+    #about .profile-photo {
+        width: 180px;
+        height: 180px;
     }
 
-    /* About Section */
-    #about {
-        padding: 40px 20px;
-    }
-
-    .profile-photo {
-        width: 120px;
-        height: 120px;
-    }
-
-    /* Section Headings */
     section h2 {
-        font-size: 1.6rem;
+        font-size: 1.5rem;
     }
 
-    /* About Text */
-    #about p {
-        font-size: 1rem;
-        max-width: 100%;
+    #projects h3 {
+        font-size: 1.2rem;
     }
 
-    /* Projects Section */
-    #projects .project-item h3 {
-        font-size: 1.3rem;
-    }
-
-    /* Contact Section */
-    #contact form {
-        gap: 15px;
-    }
-
-    /* Footer */
-    footer p {
+    footer {
         font-size: 0.9rem;
-    }
-
-    /* Scroll to Top Button */
-    #scroll-to-top {
-        bottom: 10px;
-        right: 10px;
-        padding: 8px 15px;
     }
 }
