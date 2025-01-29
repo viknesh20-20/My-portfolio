@@ -1,3 +1,4 @@
+require('dotenv').config(); // Load environment variables from .env file
 const express = require('express');
 const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser');
@@ -8,7 +9,8 @@ const excel = require('exceljs');
 const app = express();
 const port = 3000;
 
-// Middleware to parse incoming form data
+// Middleware to parse incoming JSON and form data
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
@@ -16,20 +18,33 @@ app.use(express.static('public'));
 app.post('/submit-contact', async (req, res) => {
     const { name, email, message } = req.body;
 
+    if (!name || !email || !message) {
+        return res.status(400).send('All fields are required.');
+    }
+
+    console.log('Received form data:', req.body);
+
     // Define the path to the Excel file
     const filePath = path.join(__dirname, 'contacts.xlsx');
     const workbook = new excel.Workbook();
+    let worksheet;
 
-    // Ensure the file exists and read/write appropriately
     try {
         if (fs.existsSync(filePath)) {
             console.log('Excel file exists, reading file...');
             await workbook.xlsx.readFile(filePath);
-            const worksheet = workbook.getWorksheet('Contacts');
-            console.log('Worksheet loaded successfully.');
+            worksheet = workbook.getWorksheet('Contacts');
+            if (!worksheet) {
+                worksheet = workbook.addWorksheet('Contacts');
+                worksheet.columns = [
+                    { header: 'Name', key: 'name' },
+                    { header: 'Email', key: 'email' },
+                    { header: 'Message', key: 'message' }
+                ];
+            }
         } else {
             console.log('Excel file does not exist, creating a new file...');
-            const worksheet = workbook.addWorksheet('Contacts');
+            worksheet = workbook.addWorksheet('Contacts');
             worksheet.columns = [
                 { header: 'Name', key: 'name' },
                 { header: 'Email', key: 'email' },
@@ -37,8 +52,8 @@ app.post('/submit-contact', async (req, res) => {
             ];
         }
 
-        // Add the new row to the worksheet
-        workbook.getWorksheet('Contacts').addRow([name, email, message]);
+        // Add new data
+        worksheet.addRow({ name, email, message });
         console.log('Row added to the worksheet.');
 
         // Save the file
@@ -50,18 +65,18 @@ app.post('/submit-contact', async (req, res) => {
         return res.status(500).send('Error saving data to Excel.');
     }
 
-    // Send email notification to your email (aitester2005@gmail.com)
+    // Send email notification
     const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            user: 'smuthuviknesh2@gmail.com',
-            pass: 'uhgm dsgh fxrx spwm ' // Use app password if 2FA is enabled
+            user: process.env.EMAIL_USER, // Secure email
+            pass: process.env.EMAIL_PASS  // Secure password (use App Password if 2FA is enabled)
         }
     });
 
     const mailOptions = {
-        from: 'smuthuviknesh2@gmail.com',
-        to: 'smuthuviknesh@gmail.com', // Send email to your address
+        from: process.env.EMAIL_USER,
+        to: 'smuthuviknesh@gmail.com',
         subject: 'New Contact Form Submission',
         text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`
     };

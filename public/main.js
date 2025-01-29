@@ -33,24 +33,28 @@ const contactForm = document.querySelector('.contact-form');
 contactForm.addEventListener('submit', async (event) => {
     event.preventDefault();
 
-    const formData = new FormData(contactForm);
+    const formData = {
+        name: contactForm.querySelector('input[name="name"]').value,
+        email: contactForm.querySelector('input[name="email"]').value,
+        message: contactForm.querySelector('textarea[name="message"]').value
+    };
+
     const submitButton = contactForm.querySelector('button');
-    
-    // Disable the button during the request
     submitButton.disabled = true;
     submitButton.textContent = 'Sending...';
 
     try {
-        // Send form data to your backend (server.js) using fetch API
         const response = await fetch('/submit-contact', {
             method: 'POST',
-            body: formData
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
         });
 
         if (response.ok) {
-            // Success message with fade-in animation
             showMessage('Your message has been sent successfully!', 'success');
-            contactForm.reset(); // Reset form after submission
+            contactForm.reset();
         } else {
             showMessage('There was an error submitting your message. Please try again later.', 'error');
         }
