@@ -1,142 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>S Muthu Viknesh Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>S Muthu Viknesh | Portfolio</title>
+    <!-- Fonts and external CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@400;600&family=Raleway:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style2.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script> <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-..." crossorigin="anonymous">
+
 </head>
-<body>
+
+<body id="body">
+
     <!-- Header Section -->
-    <header>
-        <!-- Name as Logo -->
-        <div class="logo">
-            <h1>S Muthu Viknesh</h1>
+    <header id="header" class="bg-gray-800 text-white py-6">
+        <div class="container flex justify-between items-center">
+            <h1><a href="#" class="text-3xl font-semibold hover:text-gray-400">S Muthu Viknesh</a></h1>
+            <h2 class="text-xl">Machine Learning & AI Enthusiast</h2>
+            <div class="social-links">
+                <!-- Original GitHub and LinkedIn logos -->
+                <a href="https://www.linkedin.com/in/muthu-viknesh-80087024b/" target="_blank" title="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/viknesh20-20" target="_blank" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
         </div>
-        <button class="menu-toggle" aria-label="Toggle Menu">
-            <i class="fas fa-bars"></i>
-        </button>
-        <nav>
-            <ul>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="/resume.pdf" download>Download My Resume</a></li>
-            </ul>
-        </nav>
-        <div class="social-icons">
-            <!-- Original GitHub and LinkedIn logos -->
-            <a href="https://www.linkedin.com/in/muthu-viknesh-80087024b/" target="_blank" title="LinkedIn">
-                <i class="fab fa-linkedin"></i>
-            </a>
-            <a href="https://github.com/viknesh20-20" target="_blank" title="GitHub">
-                <i class="fab fa-github"></i>
-            </a>
-        </div>
-        <button id="theme-toggle">Switch to Dark Mode</button>
     </header>
 
-    <!-- Main Content -->
-    <main>
-        <!-- Hero Section -->
-        <section id="hero">
-            <h1>Welcome to My Portfolio</h1>
-            <p>3rd Year Computer Science Engineering Student | Machine Learning Enthusiast</p>
-        </section>
+    <!-- Navigation Menu -->
+    <nav id="nav-menu-container" class="bg-gray-700 text-white py-4">
+        <div class="container">
+            <ul class="nav-menu flex justify-center space-x-8">
+                <li><a href="#about" class="hover:text-gray-400">About</a></li>
+                <li><a href="#education" class="hover:text-gray-400">Education</a></li>
+                <li><a href="#work-experience" class="hover:text-gray-400">Work Experience</a></li>
+                <li><a href="#skills" class="hover:text-gray-400">Skills</a></li>
+                <li><a href="#projects" class="hover:text-gray-400">Projects</a></li>
+                <li><a href="#contact" class="hover:text-gray-400">Contact</a></li>
+                <button id="theme-toggle">Dark Mode</button>
 
-        <!-- About Me Section -->
-        <section id="about">
-            <div class="container">
-                <h2>About Me</h2>
-                <div class="profile-container">
-                    <!-- Add Profile Photo -->
-                    <img src="profile.jpg" alt="Profile Photo" class="profile-photo">
+            </ul>
+        </div>
+    </nav>
+
+    <!-- About Section -->
+    <section id="about" class="section-show py-16">
+        <div class="container flex flex-col md:flex-row items-center text-center md:text-left">
+            <img src="profile.jpg" alt="S Muthu Viknesh" class="profile-img w-40 h-40 rounded-full shadow-lg mb-6 md:mb-0 md:mr-6" onerror="this.onerror=null; this.src='placeholder.jpg';">
+            <div>
+                <h3 class="text-3xl font-semibold mb-4">About Me</h3>
+                <p class="text-lg mb-4">I'm a motivated 3rd-year Computer Science Engineering student with a strong foundation in Machine Learning, 
+                    Python, and Data structures. Adept at applying supervised and unsupervised learning algorithms to solve 
+                    real-world problems. Eager to contribute as a Machine Learning Intern and work towards developing 
+                    innovative solutions that drive advancements in technology and data-driven decision-making. Passionate 
+                    about exploring deep learning, NLP, and AI to tackle complex challenges</p>
+                <ul class="text-lg">
+                    <li><i class="fa fa-graduation-cap"></i> Bachelor's in Computer Science and Engineering</li>
+                    <li><i class="fa fa-heart"></i> AI & Machine Learning Enthusiast</li>
+                </ul>
+
+                <!-- Contact Details -->
+                <div class="contact-details mt-6 text-lg">
+                    <p><i class="fa fa-envelope"></i> Email: <a href="mailto:smuthuviknesh@gmail.com" class="text-blue-400">smuthuviknesh@gmail.com</a></p>
+                    <p><i class="fa fa-phone"></i> Phone: <a href="tel:+918637428971" class="text-blue-400">+91 8637428971</a></p>
                 </div>
-                <p>
-                    Hi, I’m <span>S Muthu Viknesh</span>, a 3rd-year Computer Science Engineering student passionate about technology, problem-solving, and innovation. With hands-on experience in Python, artificial neural networks, and machine learning, I’m dedicated to building AI-powered solutions that make an impact. I love working on projects like <span>AI-Powered Code Debugging Tool</span> and <span>Emotion Recognition from Text for Sentiment Analysis</span>, which push the boundaries of what’s possible with AI.
-                </p>
             </div>
-        </section>
+        </div>
+        <div class="download-resume text-center mt-8">
+            <a href="resume.pdf" download>
+                <button class="download-btn py-2 px-6 bg-blue-600 text-white rounded-lg hover:bg-blue-700">Download Resume</button>
+            </a>
+        </div>
+    </section>
 
-        <!-- Education Section -->
-        <section id="education">
-            <div class="container">
-                <h2>Education</h2>
-                <p>B.E. in Computer Science Engineering from University College of Engineering, Kanchipuram.</p>
-                <p>CGPA: 8.3 (as of 3rd year). Expected Graduation Date: June 2026.</p>
+    <!-- Education Section -->
+    <section id="education" class="py-16">
+        <div class="container text-center">
+            <div class="section-title">
+                <h2 class="text-3xl font-semibold mb-4">Education</h2>
+                <h4 class="text-xl mb-8">My Academic Journey</h4>
             </div>
-        </section>
+            <div class="education-list space-y-6">
+                <div class="education-item">
+                    <h3 class="text-xl font-semibold">Bachelor of Engineering in Computer Science and Engineering</h3>
+                    <p>University College of Engineering, Kanchipuram</p>
+                    <p>Expected Graduation: June 2026 | CGPA: 8.3</p>
+                </div>
+                <div class="education-item">
+                    <h3 class="text-xl font-semibold">High School</h3>
+                    <p>M.L.M Mamallan Matriculation Higher SecondarySchool</p>
+                    <p>Graduated: 2022 | Grade: 84%</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <!-- Experience Section -->
-        <section id="experience">
-            <div class="container">
-                <h2>Work Experience</h2>
-                <div class="experience-item">
-                    <h3>Artificial Neural Networks Intern</h3>
-                    <p><em>Coding Junior (January 2025 – Present)</em></p>
-                    <ul>
-                        <li>Designed and implemented efficient neural network solutions for projects.</li>
-                        <li>Collaborated with a team to enhance machine learning models for better accuracy.</li>
-                        <li>Contributed to AI research for practical problem-solving applications.</li>
+    <!-- Work Experience Section -->
+    <section id="work-experience" class="py-16 bg-gray-100">
+        <div class="container text-center">
+            <div class="section-title">
+                <h2 class="text-3xl font-semibold mb-4">Work Experience</h2>
+                <h4 class="text-xl mb-8">My Professional Journey</h4>
+            </div>
+            <div class="work-experience-list space-y-6">
+                <div class="work-experience-item">
+                    <h3 class="text-xl font-semibold">Artificial Neural Networks Intern</h3>
+                    <p>Coding Junior | January 2025 – Present</p>
+                    <ul class="list-disc text-lg">
+                        <li>Developing machine learning models and neural networks for automation tools.</li>
+                        <li>Collaborating with a team to integrate AI-driven solutions into the project pipeline.</li>
                     </ul>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Projects Section -->
-        <section id="projects">
-            <div class="container">
-                <h2>Projects</h2>
-                <div class="project-item">
-                    <h3>AI-Powered Code Debugging Tool</h3>
-                    <p>
-                        An AI-based solution that identifies and fixes coding issues in Python. Utilized machine learning models to analyze and debug code snippets.
-                    </p>
-                    <a href="https://github.com/viknesh20-20">View on GitHub</a>
+    <!-- Skills Section -->
+    <section id="skills" class="py-16">
+        <div class="container text-center">
+            <div class="section-title">
+                <h2 class="text-3xl font-semibold mb-4">Skills</h2>
+                <h4 class="text-xl mb-8">My Skill Set</h4>
+            </div>
+            <div class="skills space-y-6">
+                <div class="progress">
+                    <div class="progress-bar bg-blue-600" style="width: 95%"><span class="skill-name">Python</span></div>
                 </div>
-                <div class="project-item">
-                    <h3>Emotion Recognition from Text</h3>
-                    <p>
-                        Developed a tool to analyze and determine emotions from text input using NLP techniques and trained machine learning models.
-                    </p>
+                <div class="progress">
+                    <div class="progress-bar bg-green-600" style="width: 90%"><span class="skill-name">Machine Learning</span></div>
+                </div>
+                <div class="progress">
+                    <div class="progress-bar bg-green-600" style="width: 80%"><span class="skill-name">Neural Networks</span></div>
+                </div>
+                <div class="progress">
+                    <div class="progress-bar bg-red-600" style="width: 80%"><span class="skill-name">C/C++</span></div>
+                </div>
+                <div class="progress">
+                    <div class="progress-bar bg-red-600" style="width: 70%"><span class="skill-name">Java</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-16 bg-gray-100">
+        <div class="container text-center">
+            <div class="section-title">
+                <h2 class="text-3xl font-semibold mb-4">Projects</h2>
+                <h4 class="text-xl mb-8">Some of the projects I've worked on</h4>
+            </div>
+            <div class="projects space-y-6">
+                <div class="project">
+                    <h3 class="text-xl font-semibold">AI-Powered Code Debugging Tool</h3>
+                    <p>A tool that uses machine learning to automatically detect bugs in code and suggest fixes.</p>
+                </div>
+                <div class="project">
+                    <h3 class="text-xl font-semibold">Emotion Recognition from Text for Sentiment Analysis</h3>
+                    <p>An NLP-based tool that identifies emotions in text and provides sentiment analysis.</p>
                     <a href="https://github.com/viknesh20-20/Emotion-Analysis">View on GitHub</a>
-                </div>
+                </div
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Contact Section -->
-        <section id="contact">
-            <div class="container">
-                <h2>Contact Me</h2>
-                <form id="contact-form">
-                    <label for="name">Your Name</label>
-                    <input type="text" id="name" name="name" required>
-                    <label for="email">Your Email</label>
-                    <input type="email" id="email" name="email" required>
-                    <label for="message">Your Message</label>
-                    <textarea id="message" name="message" required></textarea>
-                    <button type="submit">Send Message</button>
-                </form>
-                <div id="contact-info">
-                    <p>Email: smuthuviknesh@gmail.com</p>
-                    <p>Phone: 8637428971</p>
-                </div>
+    <!-- Contact Section -->
+    <section id="contact" class="py-16">
+        <div class="container text-center">
+            <div class="section-title">
+                <h2 class="text-3xl font-semibold mb-4">Contact</h2>
+                <h4 class="text-xl mb-8">Get in touch with me</h4>
             </div>
-        </section>
-    </main>
+            <form class="contact-form space-y-6" action="https://formspree.io/f/xpzkowor" method="POST">
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="Your Name" class="w-full p-4 border border-gray-300 rounded-lg" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Your Email" class="w-full p-4 border border-gray-300 rounded-lg" required>
+                </div>
+                <div class="form-group">
+                    <textarea name="message" placeholder="Your Message" class="w-full p-4 border border-gray-300 rounded-lg" required></textarea>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700">Send Message</button>
+                </div>
+            </form>
+        </div>
+    </section>
 
-    <!-- Footer -->
-    <footer>
-        <p>© 2025 S Muthu Viknesh | All Rights Reserved</p>
+    <!-- Footer Section -->
+    <footer class="bg-gray-800 text-white py-6 text-center">
+        <p>&copy; 2025 S Muthu Viknesh. All rights reserved. | <a href="#" class="text-blue-400">Privacy Policy</a></p>
+            
     </footer>
 
     <!-- Scroll to Top Button -->
-    <button id="scroll-to-top" onclick="scrollToTop()">Scroll to Top</button>
+    
+    <button id ="scroll-to-top" onclick="scrollToTop()">Scroll to top</button>
 
-    <!-- JavaScript -->
     <script src="main.js"></script>
 </body>
+
 </html>
